@@ -52,27 +52,23 @@ def main():
 
                 # save optical flow 
                 fname = f"{vid}_{frame_num}.jpg"
-                cv.imwrite(f"{dataset}/Flow/{fname}", magnitude)
+                cv.imwrite(f"../../data/urbansas/Flow/{fname}", magnitude)
 
 
 if __name__ == "__main__":
 
     # parse arguments
     parser = argparse.ArgumentParser(description='Calculate dense optical flow for urbansas')
-    parser.add_argument('-filtered', '--f', action='store_true',
-                        help='The filtered version of the dataset will be used if the argument is passed')
-    
+    parser.add_argument("-d", help='path to urbansas dataset', required=True)
 
-    filtered = parser.parse_args().f                    
 
-    dataset = "urbansas"
-    if filtered:
-        dataset = "urbansas_filtered"
+    dataset = parser.parse_args().d
 
-    video_dir = f"../../data/{dataset}/video/video_8fps/"
+
+    video_dir = f"{dataset}/video/video_8fps/"
        
     # setup directories 
-    flow_dir = f"{dataset}/Flow/"   
+    flow_dir = f"../../data/urbansas/Flow/"   
     if not os.path.isdir(flow_dir):
         os.makedirs(flow_dir)
 

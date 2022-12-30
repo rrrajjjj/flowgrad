@@ -80,16 +80,16 @@ def main():
                 aud_seg = aud[int(start*sr):int(start*sr)+sr]
                 
                 aud_name = f"{vid}_{frame_num}.wav"
-                sf.write(f"../../data/{dataset}/Data/{aud_name}", aud_seg, sr)
+                sf.write(f"../../data/urbansas/Data/{aud_name}", aud_seg, sr)
 
                 # save image 
                 img_name = f"{vid}_{frame_num}.jpg"
-                cv.imwrite(f"../../data/{dataset}/Data/{img_name}", img)
+                cv.imwrite(f"../../data/urbansas/Data/{img_name}", img)
 
                 # write label file
                 annot = create_annot_txt(frame_annot)
                 annot_name = f"{vid}_{frame_num}.txt"
-                with open (f"../../data/{dataset}/Annotations/{annot_name}", "w") as filehandler:
+                with open (f"../../data/urbansas/Annotations/{annot_name}", "w") as filehandler:
                     filehandler.writelines(annot)
 
 
@@ -124,25 +124,21 @@ def has_aud_annot(aud_annot, filename, timestamp):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Prepare the urbansas dataset')
-    parser.add_argument('-filtered', '--f', action='store_true',
-                        help='The filtered version of the dataset will be used if the argument is passed')
     parser.add_argument("-fps", default=8, type=int)
-    filtered = parser.parse_args().f         
+    parser.add_argument("-d", help='path to urbansas dataset', required=True)
     fps = parser.parse_args().fps           
-    
-    dataset = "urbansas"
-    if filtered:
-        dataset = "urbansas_filtered"
+    dataset = parser.parse_args().d
 
 
-    video_dir = f"../../data/unprocessed/{dataset}/video/video_2fps/"
-    audio_dir = f"../../data/unprocessed/{dataset}/audio/"
-    vid_annot_path = f"../../data/unprocessed/{dataset}/annotations/video_annotations.csv"
-    aud_annot_path = f"../../data/unprocessed/{dataset}/annotations/audio_annotations.csv"
+
+    video_dir = f"{dataset}/video/video_2fps/"
+    audio_dir = f"{dataset}/audio/"
+    vid_annot_path = f"{dataset}/annotations/video_annotations.csv"
+    aud_annot_path = f"{dataset}/annotations/audio_annotations.csv"
 
     # setup directories 
-    dirs = [f"{dataset}/Data/",
-            f"{dataset}/Annotations"]
+    dirs = [f"../../data/urbansas/Data",
+            f"../../data/urbansas/Annotations"]
 
     for dir in dirs:
         os.makedirs(dir, exist_ok=True)
