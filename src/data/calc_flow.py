@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 def main():
     
     # make a list of all video files 
-    img_filenames = [os.path.basename(i)[:-4] for i in glob("../../data/urbansas/Data/*jpg")]
+    img_filenames = [os.path.basename(i)[:-4] for i in glob("data/urbansas/Data/*jpg")]
     filenames = np.array(list(set(["_".join(i.split("_")[:-1]) for i in img_filenames])))
 
     # create a dictionary mapping filenames to the list of frames for which to calculate flow
@@ -52,7 +52,7 @@ def main():
 
                 # save optical flow 
                 fname = f"{vid}_{frame_num}.jpg"
-                cv.imwrite(f"../../data/urbansas/Flow/{fname}", magnitude)
+                cv.imwrite(f"data/urbansas/Flow/{fname}", magnitude)
 
 
 if __name__ == "__main__":
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     video_dir = f"{dataset}/video/video_8fps/"
        
     # setup directories 
-    flow_dir = f"../../data/urbansas/Flow/"   
+    flow_dir = f"data/urbansas/Flow/"   
     if not os.path.isdir(flow_dir):
         os.makedirs(flow_dir)
 

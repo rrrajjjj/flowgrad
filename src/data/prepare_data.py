@@ -80,16 +80,16 @@ def main():
                 aud_seg = aud[int(start*sr):int(start*sr)+sr]
                 
                 aud_name = f"{vid}_{frame_num}.wav"
-                sf.write(f"../../data/urbansas/Data/{aud_name}", aud_seg, sr)
+                sf.write(f"data/urbansas/Data/{aud_name}", aud_seg, sr)
 
                 # save image 
                 img_name = f"{vid}_{frame_num}.jpg"
-                cv.imwrite(f"../../data/urbansas/Data/{img_name}", img)
+                cv.imwrite(f"data/urbansas/Data/{img_name}", img)
 
                 # write label file
                 annot = create_annot_txt(frame_annot)
                 annot_name = f"{vid}_{frame_num}.txt"
-                with open (f"../../data/urbansas/Annotations/{annot_name}", "w") as filehandler:
+                with open (f"data/urbansas/Annotations/{annot_name}", "w") as filehandler:
                     filehandler.writelines(annot)
 
 
@@ -137,8 +137,8 @@ if __name__ == "__main__":
     aud_annot_path = f"{dataset}/annotations/audio_annotations.csv"
 
     # setup directories 
-    dirs = [f"../../data/urbansas/Data",
-            f"../../data/urbansas/Annotations"]
+    dirs = [f"data/urbansas/Data",
+            f"data/urbansas/Annotations"]
 
     for dir in dirs:
         os.makedirs(dir, exist_ok=True)
