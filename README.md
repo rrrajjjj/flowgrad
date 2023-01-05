@@ -47,7 +47,7 @@ The following model choices are available -
 
 If you have any ideas or feature requests, please feel free to raise an issue!
 
-## Credits
+## Acknowledgements
 This work is built upon and borrows heavily from [hohsiangwu/rethinking-visual-sound-localization](https://github.com/hohsiangwu/rethinking-visual-sound-localization)
 
 
