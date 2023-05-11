@@ -2,8 +2,6 @@
 
 [![Conference](https://img.shields.io/badge/Conference-ICASSP%202023-brightgreen)](https://2023.ieeeicassp.org/) [![Paper](https://img.shields.io/badge/Paper-IEEEXplore-blue)](https://ieeexplore.ieee.org/document/10094965)
 
-## Official Implementation for the [Paper](https://ieeexplore.ieee.org/document/10094965) (ICASSP 2023)
-
 Recent work in visual sound source localization relies on semantic audio-visual representations learned in a self-supervised manner, and by design excludes temporal information present in videos. While it proves to be effective for widely used benchmark datasets, the method falls short for challenging scenarios like urban traffic. This work introduces temporal context into the state-of-the-art methods for sound source localization in urban scenes using optical flow as a means to encode motion information. 
 # Inference on a Video
 https://user-images.githubusercontent.com/70520320/210113500-9ed320d7-b9e9-4158-8052-112c5d220fac.mp4
