@@ -1,6 +1,6 @@
 # Flowgrad - Using Motion for Visual Sound Source Localization
 
-[![Conference](https://img.shields.io/badge/Conference-ICASSP%202023-brightgreen)](https://2023.ieeeicassp.org/) [![Paper](https://img.shields.io/badge/Paper-IEEEXplore-blue)](https://ieeexplore.ieee.org/document/10094965)
+[![Conference](https://img.shields.io/badge/Conference-ICASSP%202023-brightgreen)](https://2023.ieeeicassp.org/) [![Paper](https://img.shields.io/badge/Paper-IEEEXplore-blue)](https://ieeexplore.ieee.org/document/10094965) [![Paper](https://img.shields.io/badge/Paper-arxiv-%23B31B1B)](https://arxiv.org/abs/2211.08367)
 
 Recent work in visual sound source localization relies on semantic audio-visual representations learned in a self-supervised manner, and by design excludes temporal information present in videos. While it proves to be effective for widely used benchmark datasets, the method falls short for challenging scenarios like urban traffic. This work introduces temporal context into the state-of-the-art methods for sound source localization in urban scenes using optical flow as a means to encode motion information. 
 # Inference on a Video
