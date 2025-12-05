@@ -40,12 +40,6 @@ The following model choices are available -
 #
 ![main_result](https://user-images.githubusercontent.com/70520320/210113600-7425f095-bfa1-4a71-a317-de12f141287d.jpg)
 
-# Upcoming! 
-1. Inference on custom videos 
-2. Training 
-3. Support for other benchmark datasets for Visual Sound Source Localization
-
-If you have any ideas or feature requests, please feel free to raise an issue!
 
 ## Acknowledgements
 This work is built upon and borrows heavily from [hohsiangwu/rethinking-visual-sound-localization](https://github.com/hohsiangwu/rethinking-visual-sound-localization)
